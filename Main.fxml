@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="588.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse360project.Controller">
+   <children>
+      <TabPane fx:id="loggedInView" layoutY="-2.0" onMouseClicked="#populateSearchEffortList" prefHeight="578.0" prefWidth="825.0">
+         <tabs>
+            <Tab closable="false" style="-fx-border-color: #29910B;" text="Create Effort">
+               <content>
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="706.0">
+                     <children>
+                        <Button id="myBtn" fx:id="stopButton" layoutX="520.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#endEffort" prefHeight="40.0" prefWidth="110.0" styleClass="stop-button" stylesheets="@login.css">
+                           <font>
+                              <Font name="Arial" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Downloads/blacksquare.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="playButton" layoutX="520.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#startEffort" prefHeight="40.0" prefWidth="110.0" styleClass="play-button" stylesheets="@login.css">
+                           <font>
+                              <Font name="Arial" size="22.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Downloads/blacktriangle.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="25.0" layoutY="32.0" prefHeight="47.0" prefWidth="266.0" styleClass="label1" stylesheets="@login.css" text="  OPTIONS">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="79.0" prefHeight="416.0" prefWidth="269.0" styleClass="label2" stylesheets="@login.css" textFill="#4d4b4b">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="561.0" layoutY="-1.0" prefHeight="30.0" prefWidth="215.0" text="EffortLogger v. Prototype" />
+                        <Label layoutX="40.0" layoutY="94.0" prefHeight="17.0" prefWidth="75.0" text="Project">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <Label layoutX="38.0" layoutY="180.0" text="Life Cycle Step">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <ComboBox fx:id="projectComboBox" layoutX="39.0" layoutY="132.0" prefHeight="17.0" prefWidth="152.0" promptText="Select..." styleClass="combo-timer" stylesheets="@login.css" />
+                        <ComboBox fx:id="lifeCycleComboBox" layoutX="39.0" layoutY="218.0" prefWidth="150.0" promptText="Select..." styleClass="combo-timer" stylesheets="@login.css" />
+                        <Label layoutX="40.0" layoutY="271.0" text="Effort Category">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <Label layoutX="44.0" layoutY="368.0" text="Deliverable">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <ComboBox fx:id="effortCatComboBox" layoutX="44.0" layoutY="313.0" prefWidth="150.0" promptText="Select..." styleClass="combo-timer" stylesheets="@login.css" />
+                        <ComboBox fx:id="deliverableComboBox" layoutX="44.0" layoutY="407.0" prefWidth="150.0" promptText="Select..." styleClass="combo-timer" stylesheets="@login.css" />
+                        <Label fx:id="errorLabel" alignment="CENTER" layoutX="375.0" layoutY="495.0" prefHeight="31.0" prefWidth="238.0" textAlignment="CENTER" />
+                        <Label fx:id="successLabel" alignment="CENTER" layoutX="355.0" layoutY="480.0" prefHeight="31.0" prefWidth="278.0" textAlignment="CENTER" />
+                        <TextField layoutX="457.0" layoutY="113.0" prefHeight="235.0" prefWidth="235.0" styleClass="round-box" stylesheets="@login.css" />
+                        <TextField fx:id="minutesField" layoutX="532.0" layoutY="192.0" prefHeight="77.0" prefWidth="113.0" promptText="00" styleClass="timer-field" stylesheets="@login.css" />
+                        <TextField fx:id="secondsField" layoutX="589.0" layoutY="192.0" prefHeight="77.0" prefWidth="103.0" promptText="00" styleClass="timer-field" stylesheets="@login.css" />
+                        <TextField fx:id="hoursField" layoutX="477.0" layoutY="192.0" prefHeight="77.0" prefWidth="84.0" promptText="00" styleClass="timer-field" stylesheets="@login.css" />
+                        <Text layoutX="542.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="18.203125">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="599.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" wrappingWidth="19.203125">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab closable="false" style="-fx-border-color: #1B37A6;" text="Edit Effort">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="158.0" layoutY="36.0" text="Modify Information of Selected Effort" />
+                        <Label layoutX="158.0" layoutY="92.0" prefHeight="17.0" prefWidth="111.0" text="Date (yyyy-mm-dd)" />
+                        <Label layoutX="383.0" layoutY="92.0" text="Start Time: (hh:mm:ss)" />
+                        <Label layoutX="570.0" layoutY="92.0" text="End Time: (hh:mm:ss)" />
+                        <TextField fx:id="editDate" layoutX="158.0" layoutY="118.0" />
+                        <TextField fx:id="editStartTime" layoutX="364.0" layoutY="118.0" />
+                        <TextField fx:id="editEndTime" layoutX="570.0" layoutY="118.0" />
+                        <Label layoutX="158.0" layoutY="187.0" prefHeight="17.0" prefWidth="111.0" text="Life Cycle Step" />
+                        <Label layoutX="388.0" layoutY="187.0" prefHeight="17.0" prefWidth="111.0" text="Effort Category" />
+                        <ComboBox fx:id="lifeCycleComboBox2" layoutX="163.0" layoutY="210.0" prefWidth="150.0" />
+                        <ComboBox fx:id="effortCatComboBox2" layoutX="364.0" layoutY="210.0" prefWidth="150.0" />
+                        <ComboBox fx:id="editEffortComboBox" layoutX="163.0" layoutY="53.0" prefHeight="26.0" prefWidth="452.0" />
+                        <Button layoutX="328.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#editEffort" prefHeight="26.0" prefWidth="223.0" text="Edit" />
+                        <Label fx:id="editErrorLabel" alignment="CENTER" layoutX="269.0" layoutY="309.0" prefHeight="22.0" prefWidth="219.0" />
+                        <Label fx:id="editSuccessLabel" layoutX="269.0" layoutY="346.0" prefHeight="22.0" prefWidth="219.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" style="-fx-border-color: #6B1BA6;" text="Defect Console">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="132.0" layoutY="39.0" text="1. Select the Project">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="dropDown_Defects" layoutX="146.0" layoutY="59.0" prefWidth="150.0" promptText="Select Project" />
+                        <Label layoutX="507.0" layoutY="41.0" text="2.a. Clear Project Defect Log" />
+                        <Button layoutX="519.0" layoutY="59.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Clear Defect Log" />
+                        <Text fx:id="projStatus" layoutX="83.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.13671875">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="132.0" layoutY="108.0" text="2.b. Select one of the following defects to make it the Current Defect or press &quot;Create Defect&quot; ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="selectDefectCombo" layoutX="146.0" layoutY="128.0" prefWidth="150.0" promptText="Select Defect" />
+                        <Button layoutX="519.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#createDefect" prefHeight="25.0" prefWidth="126.0" text="Create Defect" />
+                        <Label layoutX="132.0" layoutY="160.0" text="3. Define or update the Current Defect attributes">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="160.0" layoutY="180.0" text="Num">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="202.0" layoutY="181.0" text="Defect Name" />
+                        <Text fx:id="defectNum" layoutX="100.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" wrappingWidth="21.0" />
+                        <TextField fx:id="defectEntry" layoutX="198.0" layoutY="202.0" onKeyTyped="#displayMessage" />
+                        <Label layoutX="519.0" layoutY="181.0" text="Status:" />
+                        <Button layoutX="472.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Close" />
+                        <Button layoutX="559.0" layoutY="202.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reopen" />
+                        <Label layoutX="154.0" layoutY="237.0" text="Defect Symptoms or Cause/Resolution">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="defectInfo" layoutX="146.0" layoutY="257.0" onKeyTyped="#displayMessage" prefHeight="44.0" prefWidth="525.0" />
+                        <Button layoutX="186.0" layoutY="379.0" mnemonicParsing="false" onMouseClicked="#updateDefect" prefHeight="33.0" prefWidth="137.0" text="Update Current Defect" />
+                        <Button layoutX="508.0" layoutY="379.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="137.0" text="Delete Current Defect" />
+                        <Label layoutX="160.0" layoutY="310.0" text="Steps when injected" />
+                        <Label layoutX="347.0" layoutY="310.0" text="Steps when removed" />
+                        <Label layoutX="533.0" layoutY="310.0" text="Defect Category" />
+                        <Text fx:id="saveStatus" layoutX="280.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" wrappingWidth="148.5078125">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="stepsInjected" layoutX="154.0" layoutY="325.0" onMouseClicked="#displayMessage" prefHeight="42.0" prefWidth="157.0" />
+                        <ListView fx:id="defectCat" layoutX="523.0" layoutY="325.0" onMouseClicked="#displayMessage" prefHeight="42.0" prefWidth="157.0" />
+                        <ListView fx:id="stepsRemoved" layoutX="340.0" layoutY="325.0" onMouseClicked="#displayMessage" prefHeight="42.0" prefWidth="157.0" />
+                        <Text fx:id="defectStatus" layoutX="495.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.017578125" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" style="-fx-border-color: #B46F07;" text="Planning Poker">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="600.0">
+                     <children>
+                        <Pane fx:id="pokerFirstView" layoutY="1.0" prefHeight="457.0" prefWidth="713.0" visible="false">
+                           <children>
+                              <Text layoutX="254.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Join a Session" wrappingWidth="205.0">
+                                 <font>
+                                    <Font size="33.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="254.0" layoutY="135.0" prefHeight="17.0" prefWidth="137.0" text="Choose Session:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="activeSessions" layoutX="254.0" layoutY="164.0" prefHeight="25.0" prefWidth="200.0" promptText="Active Sessions" />
+                              <Label layoutX="254.0" layoutY="197.0" prefHeight="17.0" prefWidth="137.0" text="Display Name:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="IDField2" layoutX="254.0" layoutY="224.0" prefHeight="25.0" prefWidth="202.0" promptText="Name..." />
+                              <Label layoutX="255.0" layoutY="261.0" prefHeight="19.0" prefWidth="149.0" text="Session Password:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="passwordSessionField2" layoutX="255.0" layoutY="287.0" prefHeight="25.0" prefWidth="203.0" promptText="Password..." />
+                              <Button layoutX="254.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#attemptJoin" prefHeight="25.0" prefWidth="202.0" styleClass="button2" stylesheets="@login.css" text="Join" />
+                              <Text layoutX="255.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin?" />
+                              <Button layoutX="295.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#changePokerCreate" prefHeight="27.0" prefWidth="110.0" styleClass="createButton" stylesheets="@login.css" text="Create Session" />
+                              <Text fx:id="createMessage2" layoutX="255.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="203.13671875" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pokerSecondView" prefHeight="547.0" prefWidth="720.0" visible="false">
+                           <children>
+                              <Text layoutX="266.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Session" wrappingWidth="169.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="214.0" layoutY="95.0" prefHeight="19.0" prefWidth="199.0" text="Session ID:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="IDField" layoutX="214.0" layoutY="121.0" prefHeight="25.0" prefWidth="270.0" promptText="Enter ID..." />
+                              <Label layoutX="216.0" layoutY="214.0" prefHeight="19.0" prefWidth="201.0" text="Topics of Disscussion:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Text layoutX="216.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter each new topic seperated by a &quot;,&quot;" wrappingWidth="203.13671875">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="topicsField" layoutX="214.0" layoutY="259.0" prefHeight="149.0" prefWidth="271.0" promptText="List all topics..." styleClass="bigbox" stylesheets="@login.css" />
+                              <Label layoutX="216.0" layoutY="155.0" prefHeight="19.0" prefWidth="199.0" text="Session Password:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="passwordSessionField" layoutX="214.0" layoutY="183.0" prefHeight="25.0" prefWidth="271.0" promptText="Enter ID..." />
+                              <Button layoutX="215.0" layoutY="422.0" mnemonicParsing="false" onMouseClicked="#createSession" prefHeight="25.0" prefWidth="270.0" styleClass="cButton" stylesheets="@login.css" text="Create Session" />
+                              <Text fx:id="createMessage" layoutX="215.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.13671875" />
+                              <Text layoutX="215.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finished?" wrappingWidth="74.13671875" />
+                              <Button layoutX="266.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#changePokerJoin" styleClass="createButton" stylesheets="@login.css" text="Go Back" />
+                              <Text layoutX="290.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8-16 characters, Letters/Num only" wrappingWidth="181.0">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="329.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4-16 characters, Letters/Num only" wrappingWidth="181.0">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pokerViewPane" layoutY="2.0" prefHeight="554.0" prefWidth="720.0">
+                           <children>
+                              <Label layoutX="102.0" layoutY="11.0" prefHeight="76.0" prefWidth="457.0" styleClass="label2" stylesheets="@login.css" text="Current Topic:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="currentTopicText" layoutX="198.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text to be updated when join session is clicked &quot;will show topic1&quot;" wrappingWidth="352.13671875" />
+                              <Label layoutX="581.0" layoutY="17.0" prefHeight="27.0" prefWidth="133.0" styleClass="label1" stylesheets="@login.css" text="   Estimation">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="581.0" layoutY="44.0" prefHeight="135.0" prefWidth="134.0" styleClass="label2" stylesheets="@login.css" text="Cick on a card to place your estimation. Once you and your team are done, all scores will be revealed" textFill="#4d4b4b">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="581.0" layoutY="197.0" prefHeight="27.0" prefWidth="133.0" styleClass="label1" stylesheets="@login.css" text="   Who already joined?">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="581.0" layoutY="224.0" prefHeight="199.0" prefWidth="134.0" styleClass="label2" stylesheets="@login.css" text="These people have already joined the sessoin:" textFill="#4d4b4b">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="name1left" layoutX="589.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Name" wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name2left" layoutX="589.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name3left" layoutX="589.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name4left" layoutX="589.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name5left" layoutX="589.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name6left" layoutX="589.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="name7left" layoutX="589.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font name="Arial Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="111.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place your bets..." wrappingWidth="117.919921875">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="116.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard1" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="198.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard2" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="1">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="278.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard3" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="2">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="359.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard4" prefHeight="104.0" prefWidth="65.0" styleClass="pokerButton" stylesheets="@login.css" text="3">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="438.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard5" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="5">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="117.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard6" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="8">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="199.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard7" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="13">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="279.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard8" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="20">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="360.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard9" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="40">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="439.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard10" prefHeight="104.0" prefWidth="72.0" styleClass="pokerButton" stylesheets="@login.css" text="100">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="bName1" layoutX="111.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name1" fill="#403e3e" layoutX="111.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Name" wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="yourVoteText" layoutX="220.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#" wrappingWidth="56.890625">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="113.0" layoutY="354.0" prefHeight="27.0" prefWidth="99.0" text="Your Vote:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="sessionAvgText" layoutX="231.0" layoutY="414.0" strokeType="OUTSIDE" strokeWidth="0.0" text="?" wrappingWidth="53.890625">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="114.0" layoutY="396.0" prefHeight="27.0" prefWidth="113.0" text="Session Avg:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="next" layoutX="596.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#nextButton" prefHeight="32.0" prefWidth="103.0" styleClass="cButton" stylesheets="@login.css" text="Next Topic -&gt;" />
+                              <Button fx:id="bName2" layoutX="177.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name2" fill="#403e3e" layoutX="177.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="bName3" layoutX="244.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name3" fill="#403e3e" layoutX="247.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="bName4" layoutX="310.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name4" fill="#403e3e" layoutX="310.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="bName5" layoutX="374.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name5" fill="#403e3e" layoutX="374.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="bName6" layoutX="439.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name6" fill="#403e3e" layoutX="439.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="bName7" layoutX="506.0" layoutY="447.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="51.0" styleClass="playPoker" stylesheets="@login.css" text="?" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="name7" fill="#403e3e" layoutX="506.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="...." wrappingWidth="50.919921875">
+                                 <font>
+                                    <Font name="Arial" size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="729.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#switchBackToLoginView" prefHeight="17.0" prefWidth="49.0" styleClass="cButtonRed" stylesheets="@login.css" text="EXIT">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="407.0" layoutY="357.0" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="29.0" prefWidth="99.0" styleClass="button12" stylesheets="@login.css" text="Submit" />
+                              <Button fx:id="back" layoutX="596.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#backButton" prefHeight="32.0" prefWidth="103.0" styleClass="button2" stylesheets="@login.css" text="&lt;- Previous " />
+                              <Text layoutX="566.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Always submit before you continue" wrappingWidth="163.740234375">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="button1" layoutX="116.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#handleCard1" prefHeight="108.0" prefWidth="73.0" styleClass="pokerButton2" stylesheets="@login.css" text="0">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button2" layoutX="197.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#handleCard2" prefHeight="106.0" prefWidth="73.0" styleClass="pokerButton2" stylesheets="@login.css" text="1">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button3" layoutX="278.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#handleCard3" prefHeight="106.0" prefWidth="72.0" styleClass="pokerButton2" stylesheets="@login.css" text="2">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button4" layoutX="359.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#handleCard4" prefHeight="105.0" prefWidth="71.0" styleClass="pokerButton2" stylesheets="@login.css" text="3">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button5" layoutX="437.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#handleCard5" prefHeight="105.0" prefWidth="73.0" styleClass="pokerButton2" stylesheets="@login.css" text="5">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button6" layoutX="117.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#handleCard6" prefHeight="106.0" prefWidth="72.0" styleClass="pokerButton2" stylesheets="@login.css" text="8">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button7" layoutX="198.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#handleCard7" prefHeight="104.0" prefWidth="74.0" styleClass="pokerButton2" stylesheets="@login.css" text="13">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button8" layoutX="279.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#handleCard8" prefHeight="105.0" prefWidth="71.0" styleClass="pokerButton2" stylesheets="@login.css" text="20">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button9" layoutX="358.0" layoutY="231.0" mnemonicParsing="false" onMouseClicked="#handleCard9" prefHeight="108.0" prefWidth="74.0" styleClass="pokerButton2" stylesheets="@login.css" text="40">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="button10" layoutX="438.0" layoutY="233.0" mnemonicParsing="false" onMouseClicked="#handleCard10" prefHeight="105.0" prefWidth="74.0" styleClass="pokerButton2" stylesheets="@login.css" text="100">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="searchEffortTabButton" style="-fx-border-color: #FFC0CB;" text="Search Effort">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="effortList" layoutX="463.0" layoutY="39.0" onMouseClicked="#getSearchEffortData" prefHeight="473.0" prefWidth="291.0" />
+                        <Label layoutX="82.0" layoutY="268.0" prefHeight="28.0" prefWidth="66.0" text="Start Time: " />
+                        <Label layoutX="85.0" layoutY="305.0" prefHeight="28.0" prefWidth="60.0" text="End Time: " />
+                        <Label layoutX="86.0" layoutY="340.0" prefHeight="28.0" prefWidth="58.0" text="Duration: " />
+                        <Label layoutX="86.0" layoutY="377.0" prefHeight="28.0" prefWidth="88.0" text="Life Cycle Step: " />
+                        <Label layoutX="86.0" layoutY="411.0" prefHeight="28.0" prefWidth="88.0" text="Project Type:" />
+                        <Label layoutX="87.0" layoutY="447.0" prefHeight="28.0" prefWidth="97.0" text="Effort Category: " />
+                        <Label layoutX="87.0" layoutY="484.0" prefHeight="28.0" prefWidth="131.0" text="Deliverable Type: " />
+                        <Label fx:id="searchStartLabel" layoutX="174.0" layoutY="274.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchEndTime" layoutX="174.0" layoutY="311.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchDuration" layoutX="174.0" layoutY="346.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchLifeCycleStep" layoutX="196.0" layoutY="383.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchProjectType" layoutX="196.0" layoutY="417.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchEffortCategory" layoutX="196.0" layoutY="453.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label fx:id="searchDeliveryType" layoutX="196.0" layoutY="490.0" prefHeight="17.0" prefWidth="162.0" />
+                        <Label layoutX="82.0" layoutY="53.0" prefHeight="28.0" prefWidth="88.0" text="Project Type:" />
+                        <Label layoutX="261.0" layoutY="53.0" prefHeight="28.0" prefWidth="97.0" text="Effort Category: " />
+                        <Label layoutX="82.0" layoutY="128.0" prefHeight="28.0" prefWidth="88.0" text="Life Cycle Step: " />
+                        <Label layoutX="261.0" layoutY="128.0" prefHeight="28.0" prefWidth="131.0" text="Deliverable Type: " />
+                        <ComboBox fx:id="searchProjectTypeComboBox" layoutX="78.0" layoutY="81.0" onAction="#filterEffort" prefWidth="150.0" promptText="Select..." />
+                        <ComboBox fx:id="searchEffortCatComboBox" layoutX="252.0" layoutY="81.0" onAction="#filterEffort" prefWidth="150.0" promptText="Select..." />
+                        <ComboBox fx:id="searchLifeCycleComboBox" layoutX="78.0" layoutY="156.0" onAction="#filterEffort" prefWidth="150.0" promptText="Select..." />
+                        <ComboBox fx:id="searchDeliveryTypeComboBox" layoutX="252.0" layoutY="156.0" onAction="#filterEffort" prefWidth="150.0" promptText="Select..." />
+                        <Label alignment="CENTER" layoutX="73.0" layoutY="7.0" prefHeight="41.0" prefWidth="390.0" text="FILTERS">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="72.0" layoutY="227.0" prefHeight="41.0" prefWidth="392.0" text="EFFORT DETAIL">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="77.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#clearFilters" prefHeight="26.0" prefWidth="325.0" text="Clear" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Shower Logger">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane fx:id="showerHistoryPane" prefHeight="552.0" prefWidth="825.0" visible="false">
+                           <children>
+                              <Canvas fx:id="canvas" height="388.0" layoutX="36.0" layoutY="113.0" onMouseClicked="#onCanvasClick" width="490.0" />
+                              <Text layoutX="138.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shower History">
+                                 <font>
+                                    <Font size="41.0" />
+                                 </font>
+                              </Text>
+                              <TextArea fx:id="showerDataView" editable="false" layoutX="534.0" layoutY="113.0" prefHeight="388.0" prefWidth="279.0" />
+                              <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#onBackButtonClicked" prefHeight="32.0" prefWidth="82.0" text="Back">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="mainMenuPane" prefHeight="549.0" prefWidth="825.0">
+                           <children>
+                              <Text layoutX="226.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shower Logger">
+                                 <font>
+                                    <Font size="56.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="startStopBtn" layoutX="322.0" layoutY="195.0" mnemonicParsing="false" onMouseClicked="#onStartStopShowerButtonClicked" prefHeight="95.0" prefWidth="181.0" text="Start">
+                                 <font>
+                                    <Font size="44.0" />
+                                 </font>
+                              </Button>
+                              <Text fx:id="timerText" layoutX="368.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="viewHistoryButton" layoutX="336.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#onViewHistoryButtonClicked" text="View History">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+         </tabs>
+      </TabPane>
+      <Pane fx:id="createAccountView" layoutX="-11.0" layoutY="4.0" prefHeight="578.0" prefWidth="834.0" visible="false">
+         <children>
+            <Label layoutX="327.0" layoutY="248.0" prefHeight="17.0" prefWidth="192.0" styleClass="userlabel" stylesheets="@login.css" text="Password" />
+            <TextField fx:id="usernameField" layoutX="324.0" layoutY="217.0" prefHeight="25.0" prefWidth="226.0" promptText="Username..." />
+            <TextField fx:id="passwordField" layoutX="325.0" layoutY="288.0" prefHeight="25.0" prefWidth="226.0" promptText="Password..." />
+            <Button layoutX="324.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#createLogin" prefHeight="29.0" prefWidth="226.0" styleClass="cButton" stylesheets="@login.css" text="Create Account" />
+            <Button id="createButton" layoutX="409.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#changeToLoginView" styleClass="createButton" stylesheets="@login.css" text="Return to Login." textAlignment="CENTER" />
+            <Text layoutX="325.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Your Account">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="375.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Done?" textAlignment="CENTER" textOrigin="CENTER" />
+            <Label layoutX="327.0" layoutY="176.0" prefHeight="17.0" prefWidth="181.0" styleClass="userlabel" stylesheets="@login.css" text="New Username:" />
+            <Label layoutX="328.0" layoutY="193.0" prefHeight="17.0" prefWidth="226.0" text="Between 8-16 chracters, Letters, Numbers, &quot;-&quot;, &quot;_&quot; ">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="328.0" layoutY="265.0" prefHeight="17.0" prefWidth="219.0" text="Between 8-16, At least one: Cap Letter, Special Char.">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+            <Text fx:id="loginMessage" layoutX="337.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="248.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="loginView" layoutY="-11.0" prefHeight="595.0" prefWidth="825.0" visible="false">
+         <children>
+            <Label layoutX="327.0" layoutY="267.0" prefHeight="17.0" prefWidth="192.0" styleClass="userlabel" stylesheets="@login.css" text="Password" />
+            <TextField fx:id="usernameField2" layoutX="320.0" layoutY="230.0" prefHeight="25.0" prefWidth="226.0" promptText="Username..." />
+            <Button id="button1" fx:id="logbtn1" layoutX="324.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#attemptLogin" prefHeight="29.0" prefWidth="226.0" styleClass="button1" stylesheets="@login.css" text="Log In" />
+            <Button id="createButton" layoutX="437.0" layoutY="397.0" mnemonicParsing="false" onMouseClicked="#changeToCreateView" styleClass="createButton" stylesheets="@login.css" text="Create an account." textAlignment="CENTER" />
+            <Text layoutX="327.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EffortLogger">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Text layoutX="324.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to EffortLogger?" textAlignment="CENTER" textOrigin="CENTER" />
+            <Label layoutX="327.0" layoutY="205.0" prefHeight="17.0" prefWidth="181.0" styleClass="userlabel" stylesheets="@login.css" text="Username or phone #" />
+            <Button layoutX="435.0" layoutY="262.0" mnemonicParsing="false" styleClass="createButton" stylesheets="@login.css" text="Forgot password?" />
+            <Text fx:id="loginMessage1" layoutX="288.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="291.0" />
+            <PasswordField fx:id="passwordField2" layoutX="324.0" layoutY="296.0" prefHeight="25.0" prefWidth="219.0" promptText="Password..." />
+         </children>
+      </Pane>
+   </children>
+</Pane>

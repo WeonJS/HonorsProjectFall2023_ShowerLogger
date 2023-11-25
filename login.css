@@ -1,0 +1,241 @@
+
+.button1 {
+    -fx-background-color: rgb(0, 187, 0); /* Green background color */
+    -fx-border-color: rgb(0, 128, 64); /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: white; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.button1:hover {
+    -fx-background-color: rgb(0, 215, 0); /* Green background color on hover */
+    -fx-border-color: rgb(0,128, 64); /* Dark green border color on hover */
+}
+
+
+.createButton {
+    -fx-background-color: transparent; /* Make the background transparent */
+    -fx-border-color: transparent; /* Make the border transparent */
+    -fx-text-fill: rgb(0, 128, 255); /* Set the text color to green */
+    -fx-font-weight: bold; /* Make the text bold */
+}
+
+.createButton:hover {
+    -fx-background-color: transparent; /* Make the background transparent */
+    -fx-border-color: transparent; /* Make the border transparent */
+    -fx-text-fill: rgb(0, 191, 191); /* Set the text color to green */
+    -fx-font-weight: bold; /* Make the text bold */
+}
+
+
+.userlabel {
+    -fx-font-weight: bold; /* Make the text bold */
+}
+
+
+.cButton {
+	 -fx-background-color: rgb(0, 128, 255); /* Green background color */
+    -fx-border-color: rgb(0, 80, 159); /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: white; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.cButton:hover {
+	 -fx-background-color: rgb(70, 163, 255); /* Green background color */
+    -fx-border-color: rgb(0, 101, 202); /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: white; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.bigbox {
+	-fx-alignment: top-left; 
+	-fx-wrap-text: true;
+}
+
+.button2 {
+    -fx-background-color: #FFA500; /* Green background color */
+    -fx-border-color: #D18700; /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: white; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.button2:hover {
+    -fx-background-color: #FFB52E; /* Green background color on hover */
+    -fx-border-color: #FFA500; /* Dark green border color on hover */
+}
+
+.label1 {
+	-fx-background-color: #4f4e4c;
+	-fx-text-fill: white;
+}
+
+.label2 {
+	 -fx-wrap-text: true;
+	-fx-padding: 10px;
+	-fx-background-color: #edeceb;
+	-fx-alignment: top-left;
+	
+}
+
+.pokerButton{
+	-fx-font-weight: bold;
+	-fx-background-color: #2a8c34; /* Gradient color values */
+    -fx-background-radius: 5px; /* Adjust the radius to control the roundness of the button */
+    -fx-background-insets: 0; /* Remove any padding around the background */
+    -fx-text-fill: white; /* Text color */
+   
+     -fx-translate-y: 0; /* Initial position */
+    -fx-transition: -fx-translate-y 0.45s ease;
+    -fx-font-size: 22px;
+}
+
+.pokerButton:hover{
+	-fx-background-color: #2a8c34;
+	-fx-translate-y: -5px;
+	-fx-font-size: 22px;
+	
+}
+
+.playPoker{
+	 -fx-alignment: center, bottom;
+	 
+	-fx-font-weight: bold;
+	-fx-background-color: #cc945c;  /* Gradient color values */
+    -fx-background-radius: 5px; /* Adjust the radius to control the roundness of the button */
+    -fx-background-insets: 0; /* Remove any padding around the background */
+    -fx-text-fill: white; /* Text color */
+    -fx-border-radius: 5px; /* Rounded border */
+    -fx-font-size: 14px;
+     
+}
+
+.playPokerName{
+	-fx-fill: white; /* Set text color to white */
+    -fx-stroke: black; 
+    -fx-stroke-width: 1;
+    
+}
+
+.cButtonRed {
+	 -fx-background-color: #D7694B; /* Green background color */
+    -fx-border-color: #88260B; /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: white; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.pokerButton2{
+	-fx-margin:0;
+	-fx-padding: 0;
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(to bottom, #53a93f, #389c2e); /* Gradient color values */
+    -fx-background-radius: 5px; /* Adjust the radius to control the roundness of the button */
+    -fx-background-insets: 0; /* Remove any padding around the background */
+    -fx-text-fill: white; /* Text color */
+    -fx-border-radius: 5px; /* Rounded border */
+     -fx-translate-y: 0; /* Initial position */
+    -fx-transition: -fx-translate-y 0.45s ease;
+    -fx-font-size: 30px;
+}
+
+.pokerButton2:hover{
+	-fx-translate-y: -5px;
+	-fx-font-size: 30px;
+	
+}
+
+
+
+.button12 {
+     -fx-background-color: #c1dcf5; /* Green background color */
+    -fx-border-color: #86c1f7; /* Dark green border color */
+    -fx-border-width: 2px; /* Border width, adjust as needed */
+    -fx-text-fill: #013361; /* Text color, to make it visible on the green background */
+    -fx-font-weight: bold;
+}
+
+.button12:hover {
+    -fx-background-color: #c1dcf5; /* Green background color on hover */
+    -fx-border-color: blue; /* Dark green border color on hover */
+}
+
+
+
+.round-box {
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-width: 10px; /* Increase border width to make it thicker */
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom, #3498db, #1abc9c);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.40), 10, 0, 0, 0); /* Add shadow effect inside the border */
+}
+
+.timer-field {
+    -fx-background-color: transparent; /* Set background color to transparent */
+    -fx-font-size: 36; /* Set font size to 30 */
+    -fx-font-weight: bold; /* Set font weight to bold */
+}
+
+.combo-timer{
+	-fx-background-color: white;
+    -fx-background-radius: 10; /* Adjust the radius as needed for rounded corners */
+    -fx-text-fill: #3498db; /* Blue text color */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 0); /* Shadow effect */
+}
+
+.play-button {
+    -fx-background-color: #e6e9eb; /* Green background color */
+    -fx-background-radius: 30%; /* Rounded edges */
+    -fx-border-radius: 50%; /* Rounded edges */
+    -fx-border-color: #a0d9a9; /* Darker green border color */
+    -fx-border-width: 0; /* Border width */
+    /* Padding to make the button larger */
+    -fx-cursor: hand; /* Change cursor on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.38), 8, 0, 0, 0); /* Shadow effect */
+}
+
+.play-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #8ee6c4, #52e3ab); /* Lighter green background color on hover */
+}
+
+.stop-button{
+	 -fx-background-color: #e6e9eb; /* Green background color */
+    -fx-background-radius: 30%; /* Rounded edges */
+    -fx-border-radius: 100%; /* Rounded edges */
+    -fx-border-color: #d9ac9e; /* Darker green border color */
+    -fx-border-width: 0; /* Border width */
+     /* Padding to make the button larger */
+    -fx-cursor: hand; /* Change cursor on hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.38), 8, 0, 0, 0);
+}
+
+.stop-button:hover{
+	-fx-background-color: linear-gradient(to bottom, #FFBB8C, #ff9970);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
