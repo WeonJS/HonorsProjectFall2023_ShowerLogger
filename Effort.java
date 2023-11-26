@@ -1,4 +1,4 @@
-package cse360project;
+package HonorsProjectFall2023_ShowerLogger;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
